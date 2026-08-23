@@ -35,4 +35,16 @@ public class GradeAnalyzerTest {
         ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(88, 88, 88)); 
         assertEquals(88.0, GradeAnalyzer.calculateAverage(scores)); 
     }
+    //Additional test for ten scores
+    @Test
+    void calculateAverage_returnCorrectAverage_TenScores() {
+        ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(90, 77, 91, 85, 60, 82, 100, 91, 60, 55));
+        assertEquals(79.1, GradeAnalyzer.calculateAverage(scores));
+    }
+    //Additional rounding test
+    @Test
+    void calculateAverage_handlesRounding() {
+        ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(60, 77, 83, 91, 95));
+        assertEquals(81.2, GradeAnalyzer.calculateAverage(scores));
+    }
 }
